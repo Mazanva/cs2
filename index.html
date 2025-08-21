@@ -23,31 +23,46 @@
       </div>
     </nav>
 
+    <!-- Floating Quick Navigation -->
+    <div class="floating-nav" id="floating-nav">
+      <div class="floating-nav-content">
+        <div class="floating-nav-title">Rychlá navigace:</div>
+        <div class="floating-nav-links" id="floating-nav-links">
+          <!-- Links will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+
     <!-- Main Content -->
     <main class="main-content">
       <div class="container">
         <!-- Inferno Section -->
-        <section id="inferno" class="section">
+        <section id="inferno" class="section" data-section="inferno">
           <h2 class="section-title">Inferno</h2>
+
           <h3 class="section-title-smoke">Banana insta smoke</h3>
 
           <div class="image-grid">
             <!-- Smoke 1 - Preview -->
             <div class="image-container">
               <div class="image-wrapper">
-                <div class="image-placeholder" data-text="Preview"></div>
-                <div class="image-label">Preview</div>
+                <img
+                  src="/Pic/inferno/inferno_0.jpg"
+                  alt="Inferno Smoke banana Preview"
+                />
               </div>
             </div>
 
             <!-- Smoke 1 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="inferno-smoke-1">
               <div class="image-wrapper">
-                <div class="image-placeholder" data-text="Position"></div>
-                <div class="image-label">Position</div>
+                <img
+                  src="/Pic/inferno/inferno_1.jpg"
+                  alt="Inferno Smoke 1 Position"
+                />
                 <div
                   class="moveable-circle"
-                  style="--circle-top: 50%; --circle-left: 55.3%"
+                  style="--circle-top: 50%; --circle-left: 50%"
                 ></div>
               </div>
             </div>
@@ -55,11 +70,174 @@
             <!-- Smoke 1 - Throw -->
             <div class="image-container overlapped">
               <div class="image-wrapper">
-                <div class="image-placeholder" data-text="Throw"></div>
-                <div class="image-label">Throw - Jump throw</div>
+                <img
+                  src="/Pic/inferno/inferno_1_1.jpg"
+                  alt="Inferno Smoke 1 banana"
+                />
+                <div class="image-label">Spawn 1 <br />Jump</div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 2 - Position -->
+            <div class="image-container overlap-next" id="inferno-smoke-2">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_2.jpg"
+                  alt="Inferno Smoke 2 Position"
+                />
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 2 - Throw -->
+            <div class="image-container overlapped">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_2_2.jpg"
+                  alt="Inferno Smoke 2 banana"
+                />
+                <div class="image-label">
+                  Spawn 2 <br />
+                  W + Jump
+                </div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 61.5%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 3 - Position -->
+            <div class="image-container overlap-next" id="inferno-smoke-3">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_3.jpg"
+                  alt="Inferno Smoke 3 Position"
+                />
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 3- Throw -->
+            <div class="image-container overlapped">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_3_3.jpg"
+                  alt="Inferno Smoke 3 banana"
+                />
+                <div class="image-label">
+                  Spawn 3 <br />
+                  W + Jump
+                </div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 61.5%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 4 - Position -->
+            <div class="image-container overlap-next" id="inferno-smoke-4">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_4.jpg"
+                  alt="Inferno Smoke 4 Position"
+                />
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 4 - Throw -->
+            <div class="image-container overlapped">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_4_4.jpg"
+                  alt="Inferno Smoke 4 banana"
+                />
+                <div class="image-label">
+                  Spawn 4 <br />
+                  W + Jump
+                </div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 5 - Position -->
+            <div class="image-container overlap-next" id="inferno-smoke-5">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_5.jpg"
+                  alt="Inferno Smoke 5 Position"
+                />
                 <div
                   class="moveable-circle"
                   style="--circle-top: 50%; --circle-left: 55.3%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 5 - Throw -->
+            <div class="image-container overlapped">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_5_5.jpg"
+                  alt="Inferno Smoke 5 banana"
+                />
+                <div class="image-label">
+                  Spawn 5 <br />
+                  W + Jump
+                </div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 6 - Position -->
+            <div class="image-container overlap-next" id="inferno-smoke-6">
+              <div class="image-wrapper">
+                <img
+                  src="Pic/inferno/inferno_6.jpg"
+                  alt="Inferno Smoke 6 Position"
+                />
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 50%; --circle-left: 50%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Smoke 6 - Throw -->
+            <div class="image-container overlapped">
+              <div class="image-wrapper">
+                <img
+                  src="/Pic/inferno/inferno_6_6.jpg"
+                  alt="Inferno Smoke 6 banana"
+                />
+                <div class="image-label">
+                  Spawn 6 <br />
+                  W + Jump
+                </div>
+                <div
+                  class="moveable-circle"
+                  style="--circle-top: 61.6%; --circle-left: 50%"
                 ></div>
               </div>
             </div>
@@ -67,8 +245,9 @@
         </section>
 
         <!-- Nuke Section -->
-        <section id="nuke" class="section">
+        <section id="nuke" class="section" data-section="nuke">
           <h2 class="section-title">Nuke</h2>
+
           <h3 class="section-title-smoke">Outside insta smoke</h3>
 
           <div class="image-grid">
@@ -80,10 +259,9 @@
             </div>
 
             <!-- Smoke 1 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-1">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_1.jpg" alt="Nuke Smoke 1 Position" />
-
                 <div
                   class="moveable-circle"
                   style="--circle-top: 50%; --circle-left: 50%"
@@ -104,10 +282,9 @@
             </div>
 
             <!-- Smoke 2 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-2">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_2.jpg" alt="Nuke Smoke 2 Position" />
-
                 <div
                   class="moveable-circle"
                   style="--circle-top: 50%; --circle-left: 50%"
@@ -131,10 +308,9 @@
             </div>
 
             <!-- Smoke 3 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-3">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_3.jpg" alt="Nuke Smoke 3 Position" />
-
                 <div
                   class="moveable-circle"
                   style="--circle-top: 50%; --circle-left: 50%"
@@ -158,7 +334,7 @@
             </div>
 
             <!-- Smoke 4 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-4">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_4.jpg" alt="Nuke Smoke 4 Position" />
                 <div
@@ -184,12 +360,12 @@
             </div>
 
             <!-- Smoke 5 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-5">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_5.jpg" alt="Nuke Smoke 5 Position" />
                 <div
                   class="moveable-circle"
-                  style="--circle-top: 50%; --circle-left: 55.3%"
+                  style="--circle-top: 50%; --circle-left: 50%"
                 ></div>
               </div>
             </div>
@@ -210,7 +386,7 @@
             </div>
 
             <!-- Smoke 6 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-6">
               <div class="image-wrapper">
                 <img src="Pic/nuke/nuke_6.jpg" alt="Nuke Smoke 6 Position" />
                 <div
@@ -236,10 +412,9 @@
             </div>
 
             <!-- Smoke 7 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-7">
               <div class="image-wrapper">
                 <img src="Pic/nuke/nuke_7.jpg" alt="Nuke Smoke 7 Position" />
-
                 <div
                   class="moveable-circle"
                   style="--circle-top: 50%; --circle-left: 50%"
@@ -248,7 +423,6 @@
             </div>
 
             <!-- Smoke 7 - Throw -->
-
             <div class="image-container overlapped">
               <div class="image-wrapper">
                 <img src="/Pic/nuke/nuke_7_7.jpg" alt="Nuke Smoke 7 Throw" />
@@ -264,7 +438,7 @@
             </div>
 
             <!-- Smoke 8 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-8">
               <div class="image-wrapper">
                 <img src="Pic/nuke/nuke_8.jpg" alt="Nuke Smoke 8 Position" />
                 <div
@@ -297,7 +471,7 @@
             </div>
 
             <!-- Smoke 9 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-9">
               <div class="image-wrapper">
                 <img src="Pic/nuke/nuke_9.jpg" alt="Nuke Smoke 8 Position" />
                 <div
@@ -330,7 +504,7 @@
             </div>
 
             <!-- Smoke 10 - Position -->
-            <div class="image-container overlap-next">
+            <div class="image-container overlap-next" id="nuke-smoke-10">
               <div class="image-wrapper">
                 <img src="Pic/nuke/nuke_10.jpg" alt="Nuke Smoke 8 Position" />
                 <div
@@ -358,7 +532,7 @@
         </section>
 
         <!-- Ancient Section - Template for future maps -->
-        <section id="ancient" class="section">
+        <section id="ancient" class="section" data-section="ancient">
           <h2 class="section-title">Ancient</h2>
           <h3 class="section-title-smoke">Coming soon...</h3>
           <div class="image-grid">
@@ -374,7 +548,7 @@
         </section>
 
         <!-- Overpass Section - Template for future maps -->
-        <section id="overpass" class="section">
+        <section id="overpass" class="section" data-section="overpass">
           <h2 class="section-title">Overpass</h2>
           <h3 class="section-title-smoke">Coming soon...</h3>
           <div class="image-grid">
@@ -390,7 +564,7 @@
         </section>
 
         <!-- Mirage Section - Template for future maps -->
-        <section id="mirage" class="section">
+        <section id="mirage" class="section" data-section="mirage">
           <h2 class="section-title">Mirage</h2>
           <h3 class="section-title-smoke">Coming soon...</h3>
           <div class="image-grid">
@@ -406,7 +580,7 @@
         </section>
 
         <!-- Train Section - Template for future maps -->
-        <section id="train" class="section">
+        <section id="train" class="section" data-section="train">
           <h2 class="section-title">Train</h2>
           <h3 class="section-title-smoke">Coming soon...</h3>
           <div class="image-grid">
@@ -422,7 +596,7 @@
         </section>
 
         <!-- Dust II Section - Template for future maps -->
-        <section id="dust2" class="section">
+        <section id="dust2" class="section" data-section="dust2">
           <h2 class="section-title">Dust II</h2>
           <h3 class="section-title-smoke">Coming soon...</h3>
           <div class="image-grid">
@@ -438,5 +612,7 @@
         </section>
       </div>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>

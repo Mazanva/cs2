@@ -62,9 +62,120 @@ body {
   background-color: rgba(255, 107, 53, 0.1);
 }
 
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #0d1117;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #30363d;
+  padding: 10px 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.floating-nav.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.floating-nav-title {
+  color: #ff6b35;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.floating-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.floating-nav-links a:hover {
+  color: #ff6b35;
+  background-color: rgba(255, 107, 53, 0.1);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Static Quick Navigation */
+.quick-nav {
+  background-color: #21262d;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0 30px 0;
+  border: 1px solid #30363d;
+}
+
+.quick-nav h4 {
+  color: #ff6b35;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quick-nav-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  list-style: none;
+}
+
+.quick-nav-links a {
+  display: block;
+  text-align: center;
+  padding: 6px 10px;
+  background-color: #30363d;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.quick-nav-links a:hover {
+  background-color: #ff6b35;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* Hlavní obsah */
 .main-content {
-  margin-top: 70px;
+  margin-top: 120px;
   padding: 40px 20px;
 }
 
@@ -75,7 +186,7 @@ body {
 
 .section {
   margin-bottom: 80px;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 130px;
 }
 
 .section-title {
@@ -117,6 +228,7 @@ body {
   align-items: center;
   width: 80%;
   margin: 0 auto;
+  scroll-margin-top: 140px;
 }
 
 /* Wrapper pro obrázek který zachová poměr stran a umožní správné pozicování kroužků */
@@ -194,7 +306,68 @@ html {
 }
 
 /* Responzivní design */
+@media (max-width: 1024px) {
+  .floating-nav-content {
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .floating-nav-title {
+    font-size: 0.8rem;
+    margin-right: 15px;
+  }
+
+  .floating-nav-links {
+    gap: 12px;
+  }
+
+  .floating-nav-links a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
 @media (max-width: 768px) {
+  .floating-nav {
+    padding: 8px 0;
+  }
+
+  .floating-nav-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .floating-nav-title {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+  }
+
+  .floating-nav-links {
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .floating-nav-links a {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .main-content {
+    margin-top: 140px;
+  }
+
+  .quick-nav-links {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 6px;
+  }
+
+  .quick-nav-links a {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
   /* Responzivní kroužek - menší na tabletu */
   .moveable-circle {
     width: 35px;
@@ -230,6 +403,29 @@ html {
 }
 
 @media (max-width: 480px) {
+  .floating-nav-title {
+    font-size: 0.7rem;
+  }
+
+  .floating-nav-links a {
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+
+  .main-content {
+    margin-top: 150px;
+  }
+
+  .quick-nav-links {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 5px;
+  }
+
+  .quick-nav-links a {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
   /* Ještě menší kroužek na mobilních zařízeních */
   .moveable-circle {
     width: 25px;
