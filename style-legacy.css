@@ -19,11 +19,23 @@ body {
   left: 0;
   width: 100%;
   background-color: #0d1117;
-  backdrop-filter: blur(10px);
+  /* Fallback for browsers without backdrop-filter */
+  background-color: rgba(13, 17, 23, 0.98);
   border-bottom: 1px solid #30363d;
   padding: 10px 0;
   z-index: 1000;
+  /* Legacy box-shadow syntax */
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern backdrop-filter with fallback */
+@supports (backdrop-filter: blur(10px)) {
+  .navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(13, 17, 23, 0.95);
+  }
 }
 
 .nav-container {
@@ -52,8 +64,15 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.9rem;
+  /* Legacy transition syntax */
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   padding: 5px 10px;
+  /* Legacy border-radius */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
 }
 
@@ -62,27 +81,52 @@ body {
   background-color: rgba(255, 107, 53, 0.1);
 }
 
-/* Floating Navigation */
+/* Floating Navigation - Legacy compatible */
 .floating-nav {
   position: fixed;
   top: 60px;
   left: 0;
   width: 100%;
   background-color: #0d1117;
-  backdrop-filter: blur(10px);
+  /* Fallback for browsers without backdrop-filter */
+  background-color: rgba(13, 17, 23, 0.98);
   border-bottom: 1px solid #30363d;
   padding: 10px 0;
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  /* Legacy transform syntax */
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
   transform: translateY(-100%);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Legacy transition syntax */
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  /* Legacy box-shadow */
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern backdrop-filter with fallback */
+@supports (backdrop-filter: blur(10px)) {
+  .floating-nav {
+    backdrop-filter: blur(10px);
+    background-color: rgba(13, 17, 23, 0.95);
+  }
 }
 
 .floating-nav.visible {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -109,7 +153,7 @@ body {
 .floating-nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }
@@ -118,8 +162,15 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.85rem;
-  transition: color 0.3s ease;
+  /* Legacy transition */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   padding: 0px 7px;
+  /* Legacy border-radius */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid transparent;
   white-space: nowrap;
@@ -134,6 +185,9 @@ body {
 /* Static Quick Navigation */
 .quick-nav {
   background-color: #21262d;
+  /* Legacy border-radius */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
   border-radius: 8px;
   padding: 15px;
   margin: 20px 0 30px 0;
@@ -148,9 +202,10 @@ body {
 }
 
 .quick-nav-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
   list-style: none;
 }
 
@@ -161,15 +216,29 @@ body {
   background-color: #30363d;
   color: #ffffff;
   text-decoration: none;
+  /* Legacy border-radius */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   font-size: 0.85rem;
+  /* Legacy transition */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  flex: 1;
+  min-width: 80px;
 }
 
 .quick-nav-links a:hover {
   background-color: #ff6b35;
   color: #ffffff;
+  /* Legacy transform */
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 
@@ -186,7 +255,7 @@ body {
 
 .section {
   margin-bottom: 80px;
-  scroll-margin-top: 130px;
+  /* Legacy scroll behavior fallback - handled by JavaScript */
 }
 
 .section-title {
@@ -208,8 +277,8 @@ body {
 }
 
 .image-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   margin-bottom: 60px;
 }
@@ -218,17 +287,26 @@ body {
 .image-container {
   position: relative;
   background-color: #21262d;
+  /* Legacy border-radius */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
   border-radius: 8px;
   overflow: hidden;
+  /* Legacy box-shadow */
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  /* Legacy transition */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  scroll-margin-top: 140px;
 }
 
 /* Wrapper pro obrázek který zachová poměr stran a umožní správné pozicování kroužků */
@@ -246,6 +324,8 @@ body {
 
 .image-placeholder {
   background: linear-gradient(135deg, #30363d, #21262d);
+  /* Fallback for older browsers */
+  background: #30363d;
   font-size: 1.1rem;
   color: #8b949e;
   border: 2px dashed #30363d;
@@ -288,21 +368,42 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
+  /* Legacy border-radius */
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   z-index: 10;
   border: 3px solid #d4ff00;
 
-  /* Pozice relativně k obrázku */
-  top: var(--circle-top, 50%);
-  left: var(--circle-left, 50%);
+  /* Pozice relativně k obrázku - CSS Custom Properties fallback */
+  top: 50%;
+  left: 50%;
+  /* Legacy transform */
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
   /* Světelný efekt */
+  -webkit-box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
   box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* CSS Custom Properties support check */
+@supports (--css: variables) {
+  .moveable-circle {
+    top: var(--circle-top, 50%);
+    left: var(--circle-left, 50%);
+  }
+}
+
+/* Smooth scrolling pro moderní prohlížeče */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Responzivní design */
@@ -345,7 +446,7 @@ html {
   }
 
   .floating-nav-links {
-    gap: 6px;
+    gap: 8px;
     justify-content: center;
   }
 
@@ -358,14 +459,10 @@ html {
     margin-top: 140px;
   }
 
-  .quick-nav-links {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 6px;
-  }
-
   .quick-nav-links a {
     padding: 5px 8px;
     font-size: 0.8rem;
+    min-width: 70px;
   }
 
   /* Responzivní kroužek - menší na tabletu */
@@ -416,14 +513,10 @@ html {
     margin-top: 150px;
   }
 
-  .quick-nav-links {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 5px;
-  }
-
   .quick-nav-links a {
     padding: 4px 6px;
     font-size: 0.75rem;
+    min-width: 60px;
   }
 
   /* Ještě menší kroužek na mobilních zařízeních */
