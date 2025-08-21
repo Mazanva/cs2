@@ -1,0 +1,253 @@
+/* Reset a základní styly */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Navigace */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d1117;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #30363d;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b35;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  color: #ff6b35;
+  background-color: rgba(255, 107, 53, 0.1);
+}
+
+/* Hlavní obsah */
+.main-content {
+  margin-top: 70px;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 80px;
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title-smoke {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 60px;
+}
+
+/* IMAGE CONTAINER - styly pro obrázky */
+.image-container {
+  position: relative;
+  background-color: #21262d;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Wrapper pro obrázek který zachová poměr stran a umožní správné pozicování kroužků */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* PŘEKRYTÍ OBRÁZKŮ - Position a Throw se překrývají na -8% */
+.overlapped {
+  margin-top: -18.6%;
+}
+
+.image-placeholder {
+  background: linear-gradient(135deg, #30363d, #21262d);
+  font-size: 1.1rem;
+  color: #8b949e;
+  border: 2px dashed #30363d;
+  padding: 100px 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.image-placeholder::before {
+  content: attr(data-text);
+}
+
+/* STYLY PRO OBRÁZKY - zajistí responsivní chování */
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  z-index: 5;
+}
+
+/* ŽLUTÝ KROUŽEK - drží pozici na obrázku na všech zařízeních */
+.moveable-circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 10;
+  border: 3px solid #d4ff00;
+
+  /* Pozice relativně k obrázku */
+  top: var(--circle-top, 50%);
+  left: var(--circle-left, 50%);
+  transform: translate(-50%, -50%);
+  /* Světelný efekt */
+  box-shadow: 0 0 10px rgba(212, 255, 0, 0.5);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responzivní design */
+@media (max-width: 768px) {
+  /* Responzivní kroužek - menší na tabletu */
+  .moveable-circle {
+    width: 35px;
+    height: 35px;
+    border-width: 2px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 0.8rem;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .image-grid {
+    gap: 15px;
+  }
+
+  .image-label {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ještě menší kroužek na mobilních zařízeních */
+  .moveable-circle {
+    width: 25px;
+    height: 25px;
+    border-width: 2px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .image-label {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
