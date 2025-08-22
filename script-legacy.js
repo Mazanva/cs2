@@ -7,12 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Navigation data for each section
   var navigationData = {
     inferno: [
-      { href: "#inferno-smoke-1", text: "Spawn 1" },
-      { href: "#inferno-smoke-2", text: "Spawn 2" },
-      { href: "#inferno-smoke-3", text: "Spawn 3" },
-      { href: "#inferno-smoke-4", text: "Spawn 4" },
-      { href: "#inferno-smoke-5", text: "Spawn 5" },
-      { href: "#inferno-smoke-6", text: "Spawn 6" },
+      { href: "#inferno-smoke-1", text: "Banana 1" },
+      { href: "#inferno-smoke-2", text: "Banana 2" },
+      { href: "#inferno-smoke-3", text: "Banana 3" },
+      { href: "#inferno-smoke-4", text: "Banana 4" },
+      { href: "#inferno-smoke-5", text: "Banana 5" },
+      { href: "#inferno-smoke-6", text: "Banana 6" },
+      { href: "#inferno-mid-1", text: "Mid 1" },
+      { href: "#inferno-mid-2", text: "Mid 2" },
+      { href: "#inferno-mid-3", text: "Mid 3" },
+      { href: "#inferno-mid-4", text: "Mid 4" },
+      { href: "#inferno-mid-5", text: "Mid 5" },
+      { href: "#inferno-mid-6", text: "Mid 6" },
     ],
     nuke: [
       { href: "#nuke-smoke-1", text: "Spawn 1" },
