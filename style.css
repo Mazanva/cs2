@@ -103,13 +103,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   white-space: nowrap;
-  margin-right: 20px;
 }
 
 .floating-nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
   justify-content: center;
   align-items: center;
 }
@@ -218,10 +216,6 @@ body {
 .image-container {
   position: relative;
   background-color: #21262d;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -237,6 +231,7 @@ body {
   width: 100%;
   height: auto;
   display: inline-block;
+  border: 2px solid #696868;
 }
 
 /* PŘEKRYTÍ OBRÁZKŮ - Position a Throw se překrývají na -8% */
@@ -274,7 +269,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgb(0, 0, 0);
+  background: rgb(105, 104, 104);
   color: #ffffff;
   padding: 15px;
   font-weight: bold;
@@ -340,12 +335,12 @@ html {
 
   .floating-nav-title {
     margin-right: 0;
-    margin-bottom: 5px;
+    margin-bottom: -6px;
     font-size: 0.75rem;
   }
 
   .floating-nav-links {
-    gap: 6px;
+    gap: 3px;
     justify-content: center;
   }
 

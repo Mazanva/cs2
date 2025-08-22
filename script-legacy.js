@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { href: "#nuke-smoke-8", text: "Spawn 8" },
       { href: "#nuke-smoke-9", text: "Outside 1" },
       { href: "#nuke-smoke-10", text: "Outside 2" },
-      { href: "#nuke-smoke-11", text: "Main" },
+      { href: "#nuke-smoke-11", text: "A Main Smoke" },
       { href: "#nuke-fire-1", text: "Fire HUT" },
     ],
   };
