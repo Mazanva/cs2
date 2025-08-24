@@ -225,4 +225,33 @@ h1 {
     font-size: 1.3rem;
     padding: 0.3rem 0.8rem;
   }
+
+/* Speciální CSS pro iPad v portrait módu */
+@media (max-width: 768px) and (min-width: 481px) and (orientation: portrait) {
+  .thumbnails {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    width: 100%;
+  }
+  
+  .thumb {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  /* Speciální CSS pro iPad v portrait módu */
+  @media (max-width: 768px) and (min-width: 481px) and (orientation: portrait) {
+    .thumbnails {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 15px !important;
+      width: 100%;
+    }
+
+    .thumb {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+  }
 }
+
