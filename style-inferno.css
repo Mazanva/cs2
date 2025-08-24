@@ -265,6 +265,10 @@ h1 {
     top: 45.3% !important;
     left: 40.9% !important;
   }
+  .main-marker[data-spawn="1_6"] {
+    top: 46.3% !important;
+    left: 61% !important;
+  }
 
   #resetBtn {
     top: 91.6%;

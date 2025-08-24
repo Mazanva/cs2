@@ -18,16 +18,16 @@
           </li>
           <li><a href="/Nuke/Fire_HUT.html" class="active">Fire HUT</a></li>
           <li><a href="/Nuke/outside.html" class="active">Outside</a></li>
-          <li><a href="/Nuke/Heaven.html" class="active">Heaven Smoke</a></li>
+          <li><a href="/Nuke/A_main.html" class="active">A Main Smoke</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="container">
-      <h1>A Main Smoke</h1>
+      <h1>Heaven</h1>
       <!-- Velký náhled -->
       <div class="preview">
-        <img id="mainImage" src="/Pic/nuke/nuke_11_1.jpg" alt="Mid Smoke" />
+        <img id="mainImage" src="/Pic/nuke/heaven/1.jpg" alt="Mid Smoke" />
         <!-- Žluté kolečko na hlavním obrázku -->
         <div id="mainMarker" class="main-marker"></div>
         <button id="resetBtn" onclick="resetImage()">Reset</button>
@@ -36,9 +36,9 @@
       <div class="thumbnails">
         <div
           class="thumb"
-          onclick="changeImage('/Pic/nuke/nuke_11_11.jpg', {top: '57.8%', left: '48.2%'}, '1_3')"
+          onclick="changeImage('/Pic/nuke/heaven/2.jpg', {top: '47.3%', left: '61.6%'}, '1_6')"
         >
-          <img src="/Pic/nuke/nuke_11.jpg" alt="Spawn 1" />
+          <img src="/Pic/nuke/heaven/3.jpg" alt="Spawn 1" />
           <div class="marker"></div>
           <div class="caption">Ctrl + Mid + Jump</div>
         </div>
@@ -77,7 +77,7 @@
         var marker = document.getElementById("mainMarker");
 
         // Resetuj obrázek
-        main.src = "/Pic/nuke/nuke_11_1.jpg";
+        main.src = "/Pic/nuke/heaven/1.jpg";
 
         // Skryj marker
         marker.style.display = "none";
