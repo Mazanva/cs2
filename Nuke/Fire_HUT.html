@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style-inferno.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/index.html" class="logo">CS Maps</a>
+        <ul class="nav-links">
+          <li>
+            <a href="/Nuke/nuke_insta.html" class="active"
+              >Outside Insta Smoke</a
+            >
+          </li>
+          <li><a href="/Nuke/A_main.html" class="active">A main smoke</a></li>
+          <li><a href="/Nuke/outside.html" class="active">Outside</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Fire HUT</h1>
+      <!-- Velký náhled -->
+      <div class="preview">
+        <img
+          id="mainImage"
+          src="/Pic/nuke/nuke_fire_1_1_1.jpg"
+          alt="Mid Smoke"
+        />
+        <!-- Žluté kolečko na hlavním obrázku -->
+        <div id="mainMarker" class="main-marker"></div>
+        <button id="resetBtn" onclick="resetImage()">Reset</button>
+      </div>
+      <!-- 6 náhledů (2 vedle sebe) -->
+      <div class="thumbnails">
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/nuke/nuke_fire_1_1.jpg', {top: '46.8%', left: '48.2%'}, '1_4')"
+        >
+          <img src="/Pic/nuke/nuke_fire_1.jpg" alt="Spawn 1" />
+          <div class="marker"></div>
+          <div class="caption">Ctrl + Jump</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeImage(src, markerPosition, spawnNumber) {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Změň obrázek
+        main.src = src;
+
+        // Nastav data-spawn atribut pro CSS targeting
+        marker.setAttribute("data-spawn", spawnNumber);
+
+        // Nastav pozici markeru a zobraz ho
+        if (markerPosition) {
+          marker.style.top = markerPosition.top;
+          marker.style.left = markerPosition.left;
+          marker.style.display = "block";
+        }
+
+        // Posun k velkému náhledu
+        if (main.scrollIntoView) {
+          try {
+            main.scrollIntoView({ behavior: "smooth" });
+          } catch (e) {
+            main.scrollIntoView();
+          }
+        }
+      }
+
+      function resetImage() {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Resetuj obrázek
+        main.src = "/Pic/nuke/nuke_fire_1_1_1.jpg";
+
+        // Skryj marker
+        marker.style.display = "none";
+        marker.removeAttribute("data-spawn");
+      }
+    </script>
+  </body>
+</html>

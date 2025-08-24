@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style-inferno.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/index.html" class="logo">CS Maps</a>
+        <ul class="nav-links">
+          <li>
+            <a href="/Inferno/Mid.html" class="active">Insta Middle Smoke</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Banana Insta Smoke</h1>
+      <!-- Velký náhled -->
+      <div class="preview">
+        <img id="mainImage" src="/Pic/inferno/inferno_0.jpg" alt="Mid Smoke" />
+        <!-- Žluté kolečko na hlavním obrázku -->
+        <div id="mainMarker" class="main-marker"></div>
+        <button id="resetBtn" onclick="resetImage()">Reset</button>
+      </div>
+      <!-- 6 náhledů (2 vedle sebe) -->
+      <div class="thumbnails">
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_1_1.jpg', {top: '58%', left: '48%'}, '1')"
+        >
+          <img src="/Pic/inferno/inferno_1.jpg" alt="Spawn 1" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 1</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_2_2.jpg', {top: '47.7%', left: '42%'}, '2')"
+        >
+          <img src="/Pic/inferno/inferno_2.jpg" alt="Spawn 2" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 2</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_3_3.jpg', {top: '70%', left: '48.4%'}, '3')"
+        >
+          <img src="/Pic/inferno/inferno_3.jpg" alt="Spawn 3" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 3</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_4_4.jpg', {top: '58%', left: '48.3%'}, '4')"
+        >
+          <img src="/Pic/inferno/inferno_4.jpg" alt="Spawn 4" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 4</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_5_5.jpg', {top: '84%', left: '48.3%'}, '5')"
+        >
+          <img src="/Pic/inferno/inferno_5.jpg" alt="Spawn 5" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 5</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="changeImage('/Pic/inferno/inferno_6_6.jpg', {top: '47%', left: '48.2%'}, '6')"
+        >
+          <img src="/Pic/inferno/inferno_6.jpg" alt="Spawn 6" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 6</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeImage(src, markerPosition, spawnNumber) {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Změň obrázek
+        main.src = src;
+
+        // Nastav data-spawn atribut pro CSS targeting
+        marker.setAttribute("data-spawn", spawnNumber);
+
+        // Nastav pozici markeru a zobraz ho
+        if (markerPosition) {
+          marker.style.top = markerPosition.top;
+          marker.style.left = markerPosition.left;
+          marker.style.display = "block";
+        }
+
+        // Posun k velkému náhledu
+        if (main.scrollIntoView) {
+          try {
+            main.scrollIntoView({ behavior: "smooth" });
+          } catch (e) {
+            main.scrollIntoView();
+          }
+        }
+      }
+
+      function resetImage() {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Resetuj obrázek
+        main.src = "/Pic/inferno/inferno_0.jpg";
+
+        // Skryj marker
+        marker.style.display = "none";
+        marker.removeAttribute("data-spawn");
+      }
+    </script>
+  </body>
+</html>
