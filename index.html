@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,11 +34,12 @@
           <h3 class="map-name">Ancient</h3>
         </div>
 
-        <div class="map-card" onclick="showComingSoon()">
-          <div class="status-badge status-coming-soon">Brzy</div>
+        <a href="/Overpass/monster.html" class="map-card">
+          <div class="status-badge">Aktivní</div>
           <div class="map-icon">🌉</div>
           <h3 class="map-name">Overpass</h3>
-        </div>
+          <p class="map-description">Monster Insta Smoke</p>
+        </a>
 
         <div class="map-card" onclick="showComingSoon()">
           <div class="status-badge status-coming-soon">Brzy</div>
@@ -63,7 +64,7 @@
     <script>
       function showComingSoon() {
         alert(
-          "Tato mapa bude brzy k dispozici! 🎮\n\nMomentálně pracujeme na přidání všech smoke lineups."
+          "Tato mapa bude brzy k dispozici! 🎮\n\nMomentálně pracujeme na přidání všech smoke lineups.",
         );
       }
 
@@ -93,7 +94,7 @@
           const currentTransform =
             heroTitle.style.transform || "translateY(0px)";
           const currentY = parseFloat(
-            currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0
+            currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0,
           );
           const newY = currentY + floatDirection * 0.5;
 

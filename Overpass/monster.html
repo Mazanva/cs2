@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overpass Monster Smoke</title>
+    <link rel="stylesheet" href="/style-inferno.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/index.html" class="logo">CS Maps</a>
+        <ul class="nav-links">
+          <li>
+            <a href="#" class="active">Insta Monster</a>
+          </li>
+          <li>
+            <a href="/Overpass/test.html">Test</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Monster Insta Smoke</h1>
+      <!-- Velký náhled -->
+      <div class="preview">
+        <img
+          id="mainImage"
+          src="/Pic/overpass/overpass_0.jpg"
+          alt="Monster Smoke"
+        />
+        <!-- Žluté kolečko na hlavním obrázku -->
+        <div id="mainMarker" class="main-marker"></div>
+        <button id="resetBtn" onclick="resetImage()">Reset</button>
+      </div>
+      <!-- 5 náhledů -->
+      <div class="thumbnails">
+        <div
+          class="thumb"
+          onclick="
+            changeImage(
+              '/Pic/overpass/overpass_1_1.jpg',
+              { top: '84%', left: '48.2%' },
+              '1',
+            )
+          "
+        >
+          <img src="/Pic/overpass/overpass_1.jpg" alt="Spawn 1" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 1</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="
+            changeImage(
+              '/Pic/overpass/overpass_2_2.jpg',
+              { top: '35%', left: '48.2%' },
+              '2',
+            )
+          "
+        >
+          <img src="/Pic/overpass/overpass_2.jpg" alt="Spawn 2" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 2</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="
+            changeImage(
+              '/Pic/overpass/overpass_3_3.jpg',
+              { top: '58%', left: '49%' },
+              '3',
+            )
+          "
+        >
+          <img src="/Pic/overpass/overpass_3.jpg" alt="Spawn 3" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 3</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="
+            changeImage(
+              '/Pic/overpass/overpass_4_4.jpg',
+              { top: '47.2%', left: '48.2%' },
+              '4',
+            )
+          "
+        >
+          <img src="/Pic/overpass/overpass_4.jpg" alt="Spawn 4" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 4</div>
+        </div>
+        <div
+          class="thumb"
+          onclick="
+            changeImage(
+              '/Pic/overpass/overpass_5_5.jpg',
+              { top: '47.2%', left: '48.2%' },
+              '5',
+            )
+          "
+        >
+          <img src="/Pic/overpass/overpass_5.jpg" alt="Spawn 5" />
+          <div class="marker"></div>
+          <div class="caption">Spawn 5</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeImage(src, markerPosition, spawnNumber) {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Změň obrázek
+        main.src = src;
+
+        // Nastav data-spawn atribut pro CSS targeting
+        marker.setAttribute("data-spawn", spawnNumber);
+
+        // Nastav pozici markeru a zobraz ho
+        if (markerPosition) {
+          marker.style.top = markerPosition.top;
+          marker.style.left = markerPosition.left;
+          marker.style.display = "block";
+        }
+
+        // Posun k velkému náhledu
+        if (main.scrollIntoView) {
+          try {
+            main.scrollIntoView({ behavior: "smooth" });
+          } catch (e) {
+            main.scrollIntoView();
+          }
+        }
+      }
+
+      function resetImage() {
+        var main = document.getElementById("mainImage");
+        var marker = document.getElementById("mainMarker");
+
+        // Resetuj obrázek
+        main.src = "/Pic/overpass/overpass_0.jpg";
+
+        // Skryj marker
+        marker.style.display = "none";
+        marker.removeAttribute("data-spawn");
+      }
+    </script>
+  </body>
+</html>
